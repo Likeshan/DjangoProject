@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>question</title>
+</head>
+<body>
+	<h1>Question</h1>
+	<!-- <strong>{{ message }} </strong> -->
+	<!-- <img src="{% static "img/cat.jpg" %}"> -->
+	{% if person_list %}
+	<ul>
+		{% for person in person_list %}
+		<li>
+			{{ person.account }}:{{ person.passwd }}
+		</li>
+		{% endfor %}
+	</ul>
+	{% else %}
+		<strong>No user data!</strong>
+	{% endif %}
+</body>
+</html>
